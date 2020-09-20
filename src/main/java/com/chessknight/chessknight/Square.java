@@ -90,7 +90,7 @@ public class Square {
                 Square newMove = new Square(newColumns.get(i), newRows.get(i));
                 possibleMoves.add(newMove);
             } catch (IllegalArgumentException e) {
-                log.debug("Move to [" + column + "," + row + "not possible");
+                log.debug("Move to [" + column + "," + row + "] not possible");
             }
         }
         return Collections.unmodifiableList(possibleMoves);

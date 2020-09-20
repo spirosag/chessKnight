@@ -22,13 +22,16 @@ public class BfsSolver implements Solver{
         queue.add(new BfsNode(startingSquare, Arrays.asList(startingSquare)));
         while (!queue.isEmpty()) {
             BfsNode current = queue.poll();
+
             if (current.getSquare().equals(endingSquare)) {
                 solutions.add(current.getPath());
             }
+
             current.getSquare().getPossibleMoves().forEach(square -> {
                 if (current.getPath().size() <= DEPTH_LIMIT) {
                     List<Square> path = new ArrayList<>(current.getPath());
                     boolean validPath = true;
+
                     if (acyclic) {
                         if (path.contains(square)) {
                             validPath = false;
@@ -41,8 +44,6 @@ public class BfsSolver implements Solver{
                     }
                 }
             });
-
-
         }
         return solutions;
     }
