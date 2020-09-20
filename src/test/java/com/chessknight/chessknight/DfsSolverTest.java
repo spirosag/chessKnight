@@ -10,8 +10,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class DfsSolverTest {
 
-    private Solver acyclicSolver;
-    private Solver cyclicSolver;
+    Solver acyclicSolver;
+    Solver cyclicSolver;
 
     @BeforeEach
     void setUp() {
