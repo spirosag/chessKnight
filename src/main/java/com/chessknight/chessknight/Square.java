@@ -99,8 +99,7 @@ public class Square {
     @Override
     public String toString() {
         return "Square{"
-                 + columnNumToColumnLetter(column) +
-                 + row +
+                 + columnNumToColumnLetter(column) + ","  + row +
                 '}';
     }
 

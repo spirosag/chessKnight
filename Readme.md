@@ -60,3 +60,5 @@ java -jar build/libs/chessknight-0.0.1-SNAPSHOT.jar
 ```
 
 A pre-build jar is available in the projects [project's releases page](https://github.com/spirosag/chessKnight/releases)
+
+Alternatively it can be imported and run through an IDE.
