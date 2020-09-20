@@ -8,7 +8,6 @@ import java.util.*;
 @RequiredArgsConstructor
 public class BfsSolver implements Solver{
     private Queue<BfsNode> queue = new LinkedList<>();
-    public static final int DEPTH_LIMIT = 3;
     private List<List<Square>> solutions;
     private final boolean acyclic;
 

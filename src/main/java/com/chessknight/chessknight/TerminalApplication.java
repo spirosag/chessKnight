@@ -24,19 +24,26 @@ public class TerminalApplication {
             if (solutions.isEmpty()) {
                 System.out.println("No solution found.");
             } else {
-                String pathString = concatSolutions(solutions);
+                String pathString = concatShortestSolution(solutions);
                 System.out.println("shortest path:" + pathString);
             }
         } while (true);
     }
 
-    private static String concatSolutions(List<List<Square>> solutions) {
+    private static String concatShortestSolution(List<List<Square>> solutions) {
         List<Square> shortestSolution = solutions.stream().min(Comparator.comparingInt(List::size))
                 .orElse(Collections.emptyList());
         String pathString = shortestSolution.stream().map(Square::toString).collect(Collectors.joining(" -> "));
         return pathString;
     }
-
+    private static String concatAllSolutions(List<List<Square>> solutions) {
+        StringBuilder sb = new StringBuilder();
+        solutions.forEach(solution -> {
+            sb.append(solution.stream().map(Square::toString).collect(Collectors.joining(" -> ")));
+            sb.append("\n");
+        });
+        return sb.toString();
+    }
     private static Square getSquareFromInput(String prompt) {
         String startingSquareStr;
         Scanner scan = new Scanner(System.in);

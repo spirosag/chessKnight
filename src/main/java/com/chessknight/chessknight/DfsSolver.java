@@ -11,8 +11,6 @@ public class DfsSolver implements Solver {
     private Square endingSquare;
     private final boolean acyclic;
 
-    public static final int DEPTH_LIMIT = 3;
-
     List<List<Square>> solutions;
 
     LinkedList<Square> currentPath;
